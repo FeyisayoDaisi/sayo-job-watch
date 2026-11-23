@@ -1,0 +1,15 @@
+{
+    "name": "sayo-job-watch",
+    "version": "0.1.0",
+    "type": "module",
+    "description": "Reads public ATS job feeds for a fixed employer list and returns matching roles.",
+    "dependencies": {
+        "apify": "^3.2.6"
+    },
+    "scripts": {
+        "start": "node src/main.js",
+        "test": "node --test test/*.test.js"
+    },
+    "author": "Feyisayo Daisi",
+    "license": "ISC"
+}

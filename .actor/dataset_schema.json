@@ -1,0 +1,25 @@
+{
+    "actorSpecification": 1,
+    "fields": {},
+    "views": {
+        "overview": {
+            "title": "Matching jobs",
+            "transformation": {
+                "fields": ["company", "title", "location", "postedAt", "url", "ats", "employmentType", "remote"]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "company": { "label": "Company", "format": "text" },
+                    "title": { "label": "Title", "format": "text" },
+                    "location": { "label": "Location", "format": "text" },
+                    "postedAt": { "label": "Posted", "format": "date" },
+                    "url": { "label": "Link", "format": "link" },
+                    "ats": { "label": "ATS", "format": "text" },
+                    "employmentType": { "label": "Type", "format": "text" },
+                    "remote": { "label": "Remote", "format": "boolean" }
+                }
+            }
+        }
+    }
+}

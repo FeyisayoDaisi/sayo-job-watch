@@ -1,0 +1,17 @@
+{
+    "actorSpecification": 1,
+    "name": "sayo-job-watch",
+    "title": "Sayo Job Watch (ATS job boards)",
+    "description": "Reads the public job feeds of a fixed list of employers on Greenhouse, Lever, Ashby, Workable and SmartRecruiters, filters by keywords and posting age, and returns one clean table of matching roles.",
+    "version": "0.1",
+    "buildTag": "latest",
+    "meta": {
+        "templateId": "js-empty",
+        "generatedBy": "Claude with Claude Fable 5.1"
+    },
+    "input": "./input_schema.json",
+    "dockerfile": "../Dockerfile",
+    "storages": {
+        "dataset": "./dataset_schema.json"
+    }
+}

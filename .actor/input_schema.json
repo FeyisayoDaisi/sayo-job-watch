@@ -1,0 +1,72 @@
+{
+    "title": "Sayo Job Watch input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "boards": {
+            "title": "Job boards to read",
+            "type": "array",
+            "description": "One entry per employer: {\"company\": \"Canonical\", \"ats\": \"greenhouse\", \"token\": \"canonical\"}. Supported ats values: greenhouse, lever, ashby, workable, smartrecruiters. The token is the board identifier in that ATS's public URL (for example jobs.ashbyhq.com/<token>, boards.greenhouse.io/<token>, jobs.lever.co/<token>, apply.workable.com/<token>).",
+            "editor": "json",
+            "prefill": [
+                { "company": "Supabase", "ats": "ashby", "token": "supabase" },
+                { "company": "The Agency Fund", "ats": "ashby", "token": "The Agency Fund" },
+                { "company": "RevenueCat", "ats": "ashby", "token": "revenuecat" },
+                { "company": "Zapier", "ats": "ashby", "token": "zapier" },
+                { "company": "Andela", "ats": "ashby", "token": "andela" },
+                { "company": "M-KOPA", "ats": "ashby", "token": "M-KOPA" },
+                { "company": "Kraken", "ats": "ashby", "token": "kraken.com" },
+                { "company": "PostHog", "ats": "ashby", "token": "posthog" },
+                { "company": "Oyster", "ats": "ashby", "token": "oyster" },
+                { "company": "Koyfin", "ats": "ashby", "token": "koyfin" },
+                { "company": "Canonical", "ats": "greenhouse", "token": "canonical" },
+                { "company": "GitLab", "ats": "greenhouse", "token": "gitlab" },
+                { "company": "Wikimedia Foundation", "ats": "greenhouse", "token": "wikimedia" },
+                { "company": "Payoneer", "ats": "greenhouse", "token": "payoneer" },
+                { "company": "GiveDirectly", "ats": "greenhouse", "token": "givedirectly" },
+                { "company": "One Acre Fund", "ats": "greenhouse", "token": "oneacrefund" },
+                { "company": "Turing", "ats": "greenhouse", "token": "turing" }
+            ]
+        },
+        "keywords": {
+            "title": "Keywords (title must contain at least one)",
+            "type": "array",
+            "description": "Case-insensitive. A job is kept when its title contains any of these. Leave empty to keep every job.",
+            "editor": "stringList",
+            "prefill": [
+                "revenue operations", "revops", "sales operations", "sales ops", "gtm", "go-to-market",
+                "business operations", "bizops", "forward deployed", "deployment strategist",
+                "sales strategy", "revenue strategy", "strategic planning", "revenue analyst",
+                "sales analyst", "revenue systems", "strategy and operations", "strategy & operations",
+                "commercial operations", "forecast", "hubspot", "ai operations", "crm",
+                "project manager", "program manager", "operations manager", "project lead",
+                "business analyst", "automation"
+            ]
+        },
+        "excludeKeywords": {
+            "title": "Exclude keywords (title must not contain any)",
+            "type": "array",
+            "description": "Case-insensitive. A job is dropped when its title contains any of these.",
+            "editor": "stringList",
+            "prefill": [
+                "intern", "software engineer", "account executive", "recruiter",
+                "technical program manager", "engineering manager", "director", "vice president", "vp ", "head of", "chief"
+            ]
+        },
+        "postedWithinDays": {
+            "title": "Posted within days",
+            "type": "integer",
+            "description": "Keep only jobs posted or updated within this many days. Boards that do not publish a date are kept and flagged with postedAt = null.",
+            "default": 9,
+            "minimum": 1,
+            "maximum": 365
+        },
+        "includeDescription": {
+            "title": "Include description text",
+            "type": "boolean",
+            "description": "Adds the first 3,000 characters of the plain-text job description to each row. Off by default to keep the dataset small.",
+            "default": false
+        }
+    },
+    "required": ["boards"]
+}
